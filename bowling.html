@@ -5,31 +5,49 @@
 <title>Bowling Scoreboard</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="bowling.js"></script>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 <style>
-#addscore{display:none}
-.position{color:red}
-.filled{color:green}
+.none{display:none}
+.position{background-color:red}
+.filled{background-color:green}
+.quarter-width{width:25%}
 </style>
 </head>
 <body>
-<ul id="scoreboard"></ul>
-<button id="print">Print</button>
-<div id="details">
-Name:<br>
-<input type="text" name="firstname" id="name">
-<br>
-<button onclick="newPlayer()">Add New Player</button>
-<br>
-<button onclick="startGame()">Start Game</button>
-</div>
-<div id="addscore">
-First Score:<br>
-<input type="text" name="firstscore" id="firstscore"><br>
-Second Score:<br>
-<input type="text" name="secondscore" id="secondscore"><br>
-<button onclick="addScore()">Add Score</button>
-<button onclick="nextTurn()">Next</button>
-<button onclick="finishGame()">Finish</button>
+<div class="jumbotron">
+	<div class="container">
+		<div class="page-header">
+			<h1>Bowling Scoreboard 0.1 <br><small>(this version does not include spares)</small></h1>
+		</div>
+		<ul id="scoreboard" class="list-group"></ul>
+		<button type="button" class="btn btn-default" id="print">Print</button>
+		<div id="details">
+			<form>
+				<div class="form-group">
+					<label for="name">Name:</label>
+					<input type="text" class="form-control quarter-width" name="firstname" id="name">
+				</div>
+				<button type="button" class="btn btn-default btn-primary" onclick="newPlayer()">Add New Player</button>
+				<button type="button" class="btn btn-default" onclick="startGame()">Start Game</button>
+			</form>
+		</div>
+		<div id="addscore" class="none">
+			<form>
+				<div class="form-group">
+					<label for="firstscore">First Score:</label>
+					<input type="text" class="form-control quarter-width" name="firstscore" id="firstscore"><br>
+					<label for="secondscore">Second Score:</label>
+					<input type="text" class="form-control quarter-width" name="secondscore" id="secondscore"><br>
+				</div>
+				<button type="button" class="btn btn-default" onclick="addScore()">Add Score</button>
+				<button type="button" class="btn btn-default" onclick="nextTurn()">Next</button>
+				<button type="button" class="btn btn-default" onclick="finishGame()">Finish</button>
+			</form>
+		</div>
+	</div>
 </div>
 </body>
 </html> 
