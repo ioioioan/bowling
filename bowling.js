@@ -94,7 +94,7 @@ function finishGame(){
 		sum = 0;
 	});
 }
-function parser(var value){
+function parser(value){
 	var inter = parseInte(value);
 	if(inter == "NaN"){
 		inter = 0
