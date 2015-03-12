@@ -9,8 +9,8 @@ function deletePlayer(elem){
 	$(elem).parent().remove();
 }
 function frames(){
-	var frame = "<span data-firstscore=\"\" data-secondscore=\"\" data-type=\"\" class=\"empty col-md-1 thumbnail\"></span><span data-firstscore=\"\" data-secondscore=\"\" data-type=\"\" class=\"empty col-md-1 thumbnail\"></span><span data-firstscore=\"\" data-secondscore=\"\" data-type=\"\" class=\"empty col-md-1 thumbnail\"></span><span data-firstscore=\"\" data-secondscore=\"\" data-type=\"\" class=\"empty col-md-1 thumbnail\"></span><span data-firstscore=\"\" data-secondscore=\"\" data-type=\"\" class=\"empty col-md-1 thumbnail\"></span><span data-firstscore=\"\" data-secondscore=\"\" data-type=\"\" class=\"empty col-md-1 thumbnail\"></span><span data-firstscore=\"\" data-secondscore=\"\" data-type=\"\" class=\"empty col-md-1 thumbnail\"></span><span data-firstscore=\"\" data-secondscore=\"\" data-type=\"\" class=\"empty col-md-1 thumbnail\"></span><span data-firstscore=\"\" data-secondscore=\"\" data-type=\"\" class=\"empty col-md-1 thumbnail\"></span><span data-firstextra=\"10\" data-secondextra=\"1\" data-firstscore=\"\" data-secondscore=\"\" data-type=\"\" class=\"empty finish col-md-1 thumbnail\"></span><span class=\"score thumbnail\"></span>";
-	var htmlstring = "<li class=\"list-group-item row\" data-name=\"" + $("#name").val() + "\">" + $("#name").val() + "<button class=\"delete btn btn-default col-md-1\" onclick=\"deletePlayer(this)\">Delete</button>" + frame + "</li>";
+	var frame = "<span data-firstscore=\"\" data-secondscore=\"\" data-type=\"\" class=\"empty col-md-1 thumbnail\"></span><span data-firstscore=\"\" data-secondscore=\"\" data-type=\"\" class=\"empty col-md-1 thumbnail\"></span><span data-firstscore=\"\" data-secondscore=\"\" data-type=\"\" class=\"empty col-md-1 thumbnail\"></span><span data-firstscore=\"\" data-secondscore=\"\" data-type=\"\" class=\"empty col-md-1 thumbnail\"></span><span data-firstscore=\"\" data-secondscore=\"\" data-type=\"\" class=\"empty col-md-1 thumbnail\"></span><span data-firstscore=\"\" data-secondscore=\"\" data-type=\"\" class=\"empty col-md-1 thumbnail\"></span><span data-firstscore=\"\" data-secondscore=\"\" data-type=\"\" class=\"empty col-md-1 thumbnail\"></span><span data-firstscore=\"\" data-secondscore=\"\" data-type=\"\" class=\"empty col-md-1 thumbnail\"></span><span data-firstscore=\"\" data-secondscore=\"\" data-type=\"\" class=\"empty col-md-1 thumbnail\"></span><span data-firstextra=\"10\" data-secondextra=\"1\" data-firstscore=\"\" data-secondscore=\"\" data-type=\"\" class=\"empty finish col-md-1 thumbnail\"></span><span style=\"margin-left:10px\" class=\"score thumbnail\"></span>";
+	var htmlstring = "<li class=\"list-group-item row\" data-name=\"" + $("#name").val() + "\">" + $("#name").val() + "<br><button class=\"delete btn btn-default col-md-1\" onclick=\"deletePlayer(this)\">Delete</button>" + frame + "</li>";
 	return htmlstring;
 }
 function startGame(){
@@ -93,4 +93,11 @@ function finishGame(){
 		$(this).find("span.score").text(sum);
 		sum = 0;
 	});
+}
+function parser(var value){
+	var inter = parseInte(value);
+	if(inter == "NaN"){
+		inter = 0
+	}
+	return inter;
 }
