@@ -11,9 +11,14 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 <style>
 .none{display:none}
-.position{background-color:red}
-.filled{background-color:green}
 .quarter-width{width:25%}
+#scoreboard li span{display:inline-block;height:80px;width:80px;color:#fff;}
+.thumbnail{margin-bottom:0!important;margin-right:5px;background-color:#C0C0C0;}
+.list-group-item{border:none}
+.position{background-color:red!important}
+.filled{background-color:green!important}
+.firstextra{background-color:blue!important}
+.secondextra{background-color:purple!important}
 </style>
 </head>
 <body>
@@ -23,7 +28,6 @@
 			<h1>Bowling Scoreboard 0.1 <br><small>(this version does not include spares)</small></h1>
 		</div>
 		<ul id="scoreboard" class="list-group"></ul>
-		<button type="button" class="btn btn-default" id="print">Print</button>
 		<div id="details">
 			<form>
 				<div class="form-group">
@@ -47,6 +51,12 @@
 				<button type="button" class="btn btn-default" onclick="finishGame()">Finish</button>
 			</form>
 		</div>
+		<br>
+		<span>10 10 4 1 1 1 1 1 1 10</span>
+        <br>--------3---------------10
+        <br>-------------------------1
+		<br>
+		<span>10 + (10 + 4) + 10 + (4 + 3) + 6 + (10 + 1) = 58</span>
 	</div>
 </div>
 </body>
